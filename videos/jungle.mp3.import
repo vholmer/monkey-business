@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/jungle.mp3-327d2fd7d61ebea77a059d5636d64cb1.mp3str"
+
+[deps]
+
+source_file="res://videos/jungle.mp3"
+dest_files=[ "res://.import/jungle.mp3-327d2fd7d61ebea77a059d5636d64cb1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

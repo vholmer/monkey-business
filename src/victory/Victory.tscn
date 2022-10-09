@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://videos/gorilla.ogv" type="VideoStream" id=1]
+[ext_resource path="res://src/victory/Victory.gd" type="Script" id=2]
+[ext_resource path="res://sfx/tada.mp3" type="AudioStream" id=3]
+[ext_resource path="res://fonts/mario-world-pixel-font/TypefaceMarioWorldPixelFilledRegular-rgVMx.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 28
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[node name="Victory" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Gorilla" type="VideoPlayer" parent="."]
+margin_right = 854.0
+margin_bottom = 480.0
+stream = ExtResource( 1 )
+autoplay = true
+bus = "Gorilla"
+
+[node name="Tada" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="Credits" type="RichTextLabel" parent="."]
+margin_top = 367.0
+margin_right = 854.0
+margin_bottom = 500.0
+custom_colors/default_color = Color( 1, 0.862745, 0.411765, 1 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]A game by LiquidFunk & Shrillwhip
+Special thanks to Rhine[/center]"
+text = "A game by LiquidFunk & Shrillwhip
+Special thanks to Rhine"

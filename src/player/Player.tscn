@@ -1,0 +1,81 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://gfx/monkey/monkey-idle.png" type="Texture" id=1]
+[ext_resource path="res://src/player/Player.gd" type="Script" id=2]
+[ext_resource path="res://gfx/monkey/monkey-walk.png" type="Texture" id=3]
+[ext_resource path="res://gfx/banana-health/banana-health.png" type="Texture" id=4]
+[ext_resource path="res://sfx/jump.ogg" type="AudioStream" id=5]
+[ext_resource path="res://sfx/damage.ogg" type="AudioStream" id=6]
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 100, 0, 100, 100 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 100, 102 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 3 )
+region = Rect2( 100, 0, 100, 102 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 200, 0, 100, 102 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 300, 0, 100, 102 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 0, -50, -16, -50, -32, -27, -30, -12, -19, 1, -32, 15, -43, 38, -33, 50, 33, 50, 46, 41, 32, 20, 26, 4, 21, 1, 28, -8, 36, -22, 13, -49 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 4 )
+animation = "walk"
+frame = 1
+playing = true
+
+[node name="Banana3" type="Sprite" parent="."]
+position = Vector2( 31, -63 )
+texture = ExtResource( 4 )
+
+[node name="Banana2" type="Sprite" parent="."]
+position = Vector2( 0, -63 )
+texture = ExtResource( 4 )
+
+[node name="Banana1" type="Sprite" parent="."]
+position = Vector2( -31, -63 )
+texture = ExtResource( 4 )
+
+[node name="BlinkTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="InvincibilityTimer" type="Timer" parent="."]
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Damage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
