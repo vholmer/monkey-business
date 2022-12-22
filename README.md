@@ -11,7 +11,7 @@ The BNAN index is constantly moving. Time your transactions well, Don Aper.
 - X to Sell
 - Space to Jump
 
-# :tools: Tools
+# Tools
 
 - [Godot](https://godotengine.org/)
 - [Aseprite](https://www.aseprite.org/)
