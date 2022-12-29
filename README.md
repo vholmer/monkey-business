@@ -19,3 +19,7 @@ The BNAN index is constantly moving. Time your transactions well, Don Aper.
 - [FL Studio](https://www.image-line.com/)
 
 SPECIAL THANKS to Rhine for assisting with the graphics.
+
+# Source Code
+
+The best way to browse the project is to open 'project.godot' in Godot. A good starting point is src/Main.gd from which the entire game is controlled.
